@@ -1,0 +1,13 @@
+name: build
+
+on:
+    push:
+        branches: [ master develop ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: build loop
+            run: FILES="**/*.c" for f in $FILES; do gcc f; done
